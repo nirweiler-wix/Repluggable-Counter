@@ -17,7 +17,7 @@ export const TopBarPackage: EntryPoint[] = [
         shell.contributeAPI(TopBarAPI, () => createTopBarAPI(shell))
     },
     extend(shell) {
-      shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => (<TopBarComponent/>)});
+      shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => (<TopBarComponent slot={shell.getSlot(componentsSlotKey)}/>)});
     }
   },
 ];
