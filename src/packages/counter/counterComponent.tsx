@@ -4,8 +4,8 @@ import "./counterComponent.css";
 export const Counter: FunctionComponent = () => {
   console.log("Counter Compenent");
   return (
-    <div className="counter">
-      <p>Counter</p>
+    <div className="container">
+      <p className="counter">Counter</p>
     </div>
   );
 };
