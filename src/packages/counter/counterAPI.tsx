@@ -14,9 +14,11 @@ export function createCounterAPI(shell: Shell) : CounterAPI {
     return {
         increase() {
             console.log("increase");
+            // later dispatch
         },
         decrease() {
             console.log("decrease");
+            // later dispatch
         }
     }
 }

@@ -14,10 +14,16 @@ export const TopBarPackage: EntryPoint[] = [
       return [MainViewAPI];
     },
     attach(shell) {
-        shell.contributeAPI(TopBarAPI, () => createTopBarAPI(shell))
+      shell.contributeAPI(TopBarAPI, () => createTopBarAPI(shell));
     },
     extend(shell) {
-      shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => (<TopBarComponent slot={shell.getSlot(componentsSlotKey)}/>)});
-    }
+      shell
+        .getAPI(MainViewAPI)
+        .contributeComponent(shell, {
+          component: () => (
+            <TopBarComponent slot={shell.getSlot(componentsSlotKey)} />
+          ),
+        });
+    },
   },
 ];
