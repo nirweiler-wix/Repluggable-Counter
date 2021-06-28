@@ -1,0 +1,1 @@
+export { CounterEntryPoint } from './counterPackage';

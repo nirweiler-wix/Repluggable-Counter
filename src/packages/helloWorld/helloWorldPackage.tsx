@@ -11,6 +11,6 @@ export const HelloWorldPackage: EntryPoint[] = [{
     },
 
     extend(shell) {
-        shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => <HelloWorld/>});
+        //shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => <HelloWorld/>});
     }
 }];
