@@ -1,7 +1,7 @@
 import React from "react";
 import { EntryPoint } from "repluggable";
 import { MainViewAPI } from "../mainView";
-import { TopBarAPI, componentsSlotKey } from "./topBarAPI";
+import { TopBarAPI, componentsSlotKey, createTopBarAPI } from "./topBarAPI";
 import { TopBarComponent } from "./topBarComponent";
 
 export const TopBarPackage: EntryPoint[] = [
@@ -13,15 +13,11 @@ export const TopBarPackage: EntryPoint[] = [
     getDependencyAPIs() {
       return [MainViewAPI];
     },
-
-    extend(shell) {
-      shell
-        .getAPI(MainViewAPI)
-        .contributeComponent(shell, {
-          component: () => (
-            <TopBarComponent slot={shell.getSlot(componentsSlotKey)} />
-          ),
-        });
+    attach(shell) {
+        shell.contributeAPI(TopBarAPI, () => createTopBarAPI(shell))
     },
+    extend(shell) {
+      shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => (<TopBarComponent/>)});
+    }
   },
 ];

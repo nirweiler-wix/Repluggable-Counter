@@ -1,7 +1,7 @@
 import { ReactComponentContributor, Shell, SlotKey } from 'repluggable';
 
 export interface TopBarAPI {
-    contributeComponent(fromShell: Shell, contribution: ContributedComponent): void
+    contributeComponent(fromShell: Shell, contribution: TopBarContributedComponent): void
 }
 
 export const TopBarAPI: SlotKey<TopBarAPI> = {
@@ -9,15 +9,15 @@ export const TopBarAPI: SlotKey<TopBarAPI> = {
     public: true,
 };
 
-export interface ContributedComponent {
+export interface TopBarContributedComponent {
   component: ReactComponentContributor;
 }
 
-export const componentsSlotKey: SlotKey<ContributedComponent> = {
-  name: 'contributedComponent',
+export const componentsSlotKey: SlotKey<TopBarContributedComponent> = {
+  name: 'topBarContributedComponent',
 };
 
-export const createMainViewAPI = (shell: Shell): TopBarAPI => {
+export const createTopBarAPI = (shell: Shell): TopBarAPI => {
     const componentsSlot = shell.declareSlot(componentsSlotKey)
 
     return {
