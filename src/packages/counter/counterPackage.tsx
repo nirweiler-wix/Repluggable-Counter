@@ -5,8 +5,8 @@ import { CounterAPI, createCounterAPI } from './counterAPI';
 import { Counter } from './counterComponent';
 
 
-export const CounterEntryPoint: EntryPoint[] = [{
-  name: "TODO_LIST",
+export const CounterPackage: EntryPoint[] = [{
+  name: "COUNTER",
   declareAPIs() {
     return [CounterAPI];
   },

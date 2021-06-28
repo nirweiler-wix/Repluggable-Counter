@@ -1,1 +1,1 @@
-export { CounterEntryPoint } from './counterPackage';
+export { CounterPackage } from './counterPackage';
