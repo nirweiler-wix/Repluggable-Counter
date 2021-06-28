@@ -6,10 +6,12 @@ import * as serviceWorker from './serviceWorker';
 import { createAppHost, AppMainView } from 'repluggable';
 import { HelloWorldPackage } from './packages/helloWorld';
 import { MainViewPackage } from './packages/mainView';
+import { CounterPackage } from './packages/counter'
 
 const host = createAppHost([
     MainViewPackage,
-    HelloWorldPackage
+    HelloWorldPackage,
+    CounterPackage    
 ]);
 
 ReactDOM.render(<AppMainView host={host} />, document.getElementById('root'));

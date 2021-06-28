@@ -2,7 +2,7 @@ import React from "react";
 import { EntryPoint, Shell } from "repluggable";
 import { MainViewAPI } from "../mainView";
 import { CounterAPI, createCounterAPI } from './counterAPI';
-import { Counter } from './counterComponent';
+import { Counter, CounterControls } from './counterComponent';
 
 
 export const CounterPackage: EntryPoint[] = [{
@@ -14,6 +14,6 @@ export const CounterPackage: EntryPoint[] = [{
     return [MainViewAPI];
   },
   extend(shell) {
-    shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => <Counter/>})
+    shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => <Counter/>});
   },
 }];
