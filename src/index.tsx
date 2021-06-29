@@ -11,7 +11,6 @@ import { TopBarPackage } from './packages/topBar';
 
 const host = createAppHost([
     MainViewPackage,
-    HelloWorldPackage,
     CounterPackage,
     TopBarPackage
 ]);

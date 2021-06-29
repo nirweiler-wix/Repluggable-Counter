@@ -1,8 +1,12 @@
 import {Shell, SlotKey} from 'repluggable';
+import { createCounterSelectors } from './state/counterSelectors';
+import { CounterActions } from './state/counterActions';
+import { CounterScopedState } from './state/types';
 
 export interface CounterAPI {
-    increase() : void;
-    decrease() : void;
+    getCounter : () => Number;
+    increaseCounter : () => void;
+    decreaseCounter : () => void;
 }
 
 export const CounterAPI: SlotKey<CounterAPI> = {
@@ -11,14 +15,21 @@ export const CounterAPI: SlotKey<CounterAPI> = {
 }
 
 export function createCounterAPI(shell: Shell) : CounterAPI {
-    return {
-        increase() {
-            console.log("increase");
-            // later dispatch
-        },
-        decrease() {
-            console.log("decrease");
-            // later dispatch
-        }
+    const store = shell.getStore<CounterScopedState>();
+    const selectors = createCounterSelectors(() => store.getState());
+
+    const getCounter: CounterAPI["getCounter"] = () => selectors.getCounter();
+
+    const increaseCounter: CounterAPI["increaseCounter"] = () => {
+        shell.getStore().dispatch(CounterActions.increaseCounter());
+    };
+
+    const decreaseCounter: CounterAPI["decreaseCounter"] = () => {
+        shell.getStore().dispatch(CounterActions.decreaseCounter());
     }
-}
+    return {
+        getCounter,
+        increaseCounter,
+        decreaseCounter,
+    };
+};
