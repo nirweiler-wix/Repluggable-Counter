@@ -11,6 +11,7 @@ export interface CounterAPI {
 
 export const CounterAPI: SlotKey<CounterAPI> = {
     name: 'Counter API',
+    //layer: 'DATA_SERVICE',
     public: true
 }
 
