@@ -7,7 +7,6 @@ import { createCounterAPI } from '../counterAPI'
 
 export const CounterDataEntryPoint: EntryPoint = {
     name: 'Counter Data Entry Point',
-    //layer: 'DATA_SERVICE',
 
     getDependencyAPIs() {
         return [MainViewAPI]

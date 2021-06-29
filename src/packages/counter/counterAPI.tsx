@@ -1,7 +1,7 @@
 import {Shell, SlotKey} from 'repluggable';
-import { CounterState } from './state/counterInitialState';
 import { createCounterSelectors } from './state/counterSelectors';
 import { CounterActions } from './state/counterActions';
+import { CounterScopedState } from './state/types';
 
 export interface CounterAPI {
     getCounter : () => Number;
@@ -11,12 +11,11 @@ export interface CounterAPI {
 
 export const CounterAPI: SlotKey<CounterAPI> = {
     name: 'Counter API',
-    //layer: 'DATA_SERVICE',
     public: true
 }
 
 export function createCounterAPI(shell: Shell) : CounterAPI {
-    const store = shell.getStore<CounterState>();
+    const store = shell.getStore<CounterScopedState>();
     const selectors = createCounterSelectors(() => store.getState());
 
     const getCounter: CounterAPI["getCounter"] = () => selectors.getCounter();

@@ -1,5 +1,5 @@
 export interface CounterProps {
-    counter: Number;
+    counter: Number
 }
 
 export interface CounterControlsProps {

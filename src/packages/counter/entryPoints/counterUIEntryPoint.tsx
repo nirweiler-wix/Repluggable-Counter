@@ -8,7 +8,6 @@ import { createConnectedCounterControls } from '../components/connected/counterC
 
 export const CounterUIEntryPoint: EntryPoint = {
     name: 'Counter UI Entry Point',
-    //layer: 'UI',
     getDependencyAPIs() {
         return [MainViewAPI, TopBarAPI, CounterAPI];
     },
