@@ -19,7 +19,7 @@ type CounterControlsProps = {
 export const CounterControls: FunctionComponent = () => {
     console.log("Counter Controls");
     return (
-        <div>
+        <div className="container">
             <button className="controlButton">+</button>
             <button className="controlButton">-</button>
         </div>
