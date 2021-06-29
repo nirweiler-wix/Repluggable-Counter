@@ -1,8 +1,7 @@
-import React from "react";
 import { EntryPoint, Shell } from "repluggable";
 import { MainViewAPI } from '../../mainView/mainViewAPI';
 import { TopBarAPI } from '../../topBar/topBarAPI'
-import { CounterAPI, createCounterAPI } from '../counterAPI';
+import { CounterAPI } from '../counterAPI';
 import { createConnectedCounter } from '../components/connected/counterComponent';
 import { createConnectedCounterControls } from '../components/connected/counterControlsComponent';
 
