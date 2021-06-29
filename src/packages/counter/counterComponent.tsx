@@ -12,8 +12,8 @@ export const Counter: FunctionComponent = () => {
 };
 
 type CounterControlsProps = {
-    increase() : CounterAPI["increase"];
-    decresde() : CounterAPI["decrease"];
+    increase() : CounterAPI["increaseCounter"];
+    decresde() : CounterAPI["decreaseCounter"];
 }
 
 export const CounterControls: FunctionComponent = () => {
