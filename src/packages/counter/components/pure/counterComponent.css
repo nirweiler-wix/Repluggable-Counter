@@ -10,10 +10,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: calc(10px + 2vmin);
+    font-size: 3vw;
     color: black;
-    width: 25%;
-    height: 25%;
+    width: 10vw;
+    height: calc(10px + 10vmin);
     border-radius: 4px;
     border-color: #282c34;
     border-style: solid;
@@ -21,11 +21,12 @@
 
 .controlButton {
     color: white;
-    width: 5%;
+    width: 5vw;
+    height: 3vw;
     background-color: transparent;
     border-radius: 4px;
     border-color: white;
-    font-size: 25px;
+    font-size: 2vw;
     justify-content: center;
     align-items: center;
     margin: 5px;
